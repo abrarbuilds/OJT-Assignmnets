@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#display{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+button{
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 5px;
+}
+    </style>
+</head>
+
+<body>
+    <div id="display">0</div>
+    <button id="inc">Increase</button>
+    <button id="dec">Decrease</button>
+    <button id="reset">Reset</button>
+    <script>
+        /* 1. Click Counter App
+ Problem Statement: Create a web page with buttons to increment, decrement, and reset a counter. Display the current count dynamically.
+ Problem: Build a counter interface that updates based on user interaction.
+ Ul Requirements:
+ • Display area for count
+ Three buttons: Increment, Decrement, Reset Constraints:
+ Count should not go below 0
+ Use DOM to update value dynamically
+ • Use click events only */
+
+        //buttons
+        let inc = document.getElementById("inc")
+        let dec = document.getElementById("dec")
+        let reset = document.getElementById("reset")
+
+        //display
+        let display = document.getElementById("display")
+        //a variable to increase or decrease value
+        let count = 0
+
+        inc.addEventListener("click", () => {
+            display.innerText = ++count;
+        });
+
+        dec.addEventListener("click", () => {
+            if (count > 0) display.innerText = --count;
+        });
+
+        reset.addEventListener("click", () => {
+            count = 0;
+            display.innerText = count;
+        });
+    </script>
+</body>
+
+</html>
