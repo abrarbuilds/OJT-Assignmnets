@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="s">Success</button>
+    <button id="w">Warning</button>
+    <button id="e">Error</button>
+    <script>
+        //         4. Alert Button System
+        // Problem Statement: Create buttons that trigger different alert messages when clicked.
+        // Problem: Trigger different alerts.
+        // Ul Requirements:
+        // • Multiple buttons (Success, Warning, Error) Constraints:
+        // • Use event listeners
+        // • Messages must differ per button
+        let s = document.getElementById("s")
+        let w = document.getElementById("w")
+        let e = document.getElementById("e")
+
+        s.addEventListener("click", function () {
+            alert("Success: Operation completed successfully!");
+        });
+
+        w.addEventListener("click", function () {
+            alert("Warning: Please check your input.");
+        });
+
+        e.addEventListener("click", function () {
+            alert("Error: Something went wrong.");
+        });
+    </script>
+</body>
+
+</html>
