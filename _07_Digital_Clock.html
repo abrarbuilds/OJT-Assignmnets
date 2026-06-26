@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dis {
+            text-align: center;
+            font-size: 50px;
+            padding-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dis"></div>
+    <script>
+        //         7. Digital Clock
+        // Problem Statement: Display a real-time digital clock that updates every second.
+        // Problem: Display real-time clock.
+        // Ul Requirements:
+        // • HH:MM:SS format
+        // Constraints:
+        // • Use setInterval()
+        // • Update every second
+
+        let dis = document.getElementById("dis")
+
+        setInterval(function () {
+
+            let time = new Date();
+
+            let hours = time.getHours();
+
+            let min = time.getMinutes();
+
+            let sec = time.getSeconds();
+
+            dis.innerText = `${hours}:${min}:${sec}`;
+
+        }, 1000);
+    </script>
+</body>
+
+</html>
