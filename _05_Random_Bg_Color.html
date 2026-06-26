@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">Change Bg Color</button>
+    <div id="dis">#FFFFFF</div>
+    <script>
+        //         5. Random Background Color
+        // Problem Statement: Generate and apply a random background color when a button is clicked.
+        // Problem: Change background color randomly.
+        // Ul Requirements:
+        // • Button + display hex code
+        // Constraints:
+        // • Generate valid hex color
+        // • Update DOM style dynamically
+        let btn = document.getElementById("btn");
+
+        let dis = document.getElementById("dis");
+
+        btn.addEventListener("click", function () {
+
+            let color = "#" + Math.floor(Math.random() * 16777215)
+
+                .toString(16)
+
+                .padStart(6, "0");
+
+            document.body.style.backgroundColor = color;
+
+            dis.innerText = color;
+
+        });
+    </script>
+</body>
+
+</html>

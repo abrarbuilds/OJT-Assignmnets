@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #btn{
+            background-color: white;
+        } */
+    </style>
+</head>
+
+<body>
+    <button id="btn">Change Me</button>
+    <script>
+        //         6. Button Color Changer
+        // Problem Statement: Change the color of a button each time it is clicked.
+        // Problem: Change button color on each click.
+        // Constraints:
+        // • Cycle through at least 3 predefined colors
+        let btn = document.getElementById("btn")
+
+        // btn.addEventListener("click", function () {
+        //     if (btn.style.backgroundColor === '' ||
+        //         btn.style.backgroundColor === 'white') {
+
+        //         btn.style.backgroundColor = 'black';
+        //         btn.style.color = 'white';
+
+        //     } else if (btn.style.backgroundColor === 'black') {
+
+        //         btn.style.backgroundColor = 'green';
+        //         btn.style.color = 'black';
+
+        //     } else if (btn.style.backgroundColor === 'green') {
+
+        //         btn.style.backgroundColor = 'red';
+        //         btn.style.color = 'white';
+
+        //     } else {
+
+        //         btn.style.backgroundColor = 'black';
+        //         btn.style.color = 'white';
+        //     }
+        // });
+
+        //method 2 using array
+        let colors = ["red", "green", "blue"];
+        let index = 0;
+
+        btn.addEventListener("click", function () {
+
+            btn.style.backgroundColor = colors[index];
+
+            index = (index + 1) % colors.length;
+
+        });
+    </script>
+</body>
+
+</html>
