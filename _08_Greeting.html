@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dis {
+            text-align: center;
+            font-size: 40px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dis"></div>
+    <script>
+        //         8. Greeting Based on Time
+        // Problem Statement: Show a greeting message (Good Morning/Afternoon/Evening) based on
+        // the current time.
+        // Problem: Show greeting depending on hour.
+        // Constraints:
+        // • Use system time
+        // • At least 3 conditions (morning/afternoon/evening)
+
+        let dis = document.getElementById("dis")
+
+        let time = new Date();
+        let hours = time.getHours();
+
+        if (hours >= 5 && hours < 12) {
+            dis.textContent = "Good Morning, Sir";
+        } else if (hours >= 12 && hours < 17) {
+            dis.textContent = "Good Afternoon, Sir";
+        } else if (hours >= 17 && hours < 21) {
+            dis.textContent = "Good Evening, Sir";
+        } else {
+            dis.textContent = "Good Night, Sir";
+        }
+    </script>
+</body>
+
+</html>
