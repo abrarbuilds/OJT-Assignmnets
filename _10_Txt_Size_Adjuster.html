@@ -19,12 +19,28 @@
         // • Define min/max size limits
 
         let p=document.getElementById("p")
-        let inc=document.getElementById("ins")
+        let inc=document.getElementById("inc")
         let dec=document.getElementById("dec")
 
-        inc.addEventListener("click",function(){
-            
-        })
+        let size = 16;
+
+    inc.addEventListener("click", function () {
+
+        // maximum limit
+        if (size < 32) {    
+            size += 2;
+            p.style.fontSize = size + "px";
+        }
+    });
+
+    dec.addEventListener("click", function () {
+
+        // minimum limit
+        if (size > 10) {   
+            size -= 2;
+            p.style.fontSize = size + "px";
+        }
+    });
     </script>
 </body>
 
