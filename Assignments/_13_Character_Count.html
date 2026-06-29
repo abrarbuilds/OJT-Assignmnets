@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea id="ip"></textarea>
+    <div id="dis"></div>
+    <script>
+        //         13. Character Counter
+        // Problem Statement: Display the number of characters typed inside a textarea in real time.
+        // Constraints:
+        // • Live update
+        // • Limit max characters
+        let ip=document.getElementById("ip")
+        let dis=document.getElementById("dis")
+
+        ip.addEventListener("keyup",function(){
+            let count =ip.value.length
+
+            dis.innerText=`The characters are ${count}`
+            dis.style.fontSize='30px'
+            dis.style.color='Green'
+        })
+    </script>
+</body>
+
+</html>

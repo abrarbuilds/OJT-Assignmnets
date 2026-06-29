@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="email" id="ip">
+    <button id="btn">Validate</button>
+    <div id="dis"></div>
+    <script>
+        //         15. Email Validator
+        // Problem Statement: Check whether an entered email follows a valid format.
+        // Constraints:
+        // • Use regex pattern
+        // • Show error message
+
+        let ip=document.getElementById("ip")
+        let dis=document.getElementById('dis')
+        let btn=document.getElementById('btn')
+
+        btn.addEventListener('click',function(){
+            let email=ip.value
+
+            let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+        if (pattern.test(email)) {
+            dis.innerText = "Valid Email"
+            dis.style.color = "green"
+            dis.style.fontSize='30px'
+        }else {
+            dis.innerText = "Invalid Email"
+            dis.style.color = "red"
+            dis.style.fontSize='30px'
+        }
+        })
+    </script>
+</body>
+
+</html>

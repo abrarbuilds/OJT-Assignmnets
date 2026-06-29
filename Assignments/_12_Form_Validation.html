@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="user" placeholder="Enter your Username"><br>
+    <input type="text" id="pass" placeholder="Enter your Password"><br>
+    <button id="btn">Submit</button>
+    <script>
+        //         12. Form Validation
+        // Problem Statement: Validate user inputs such as username, password, and email before form submission.
+        // UI: Login form
+        // Constraints:
+        // Username ≥ 3 chars
+        // Password ≥ 6 chars
+        // Prevent submission if invalid
+        let btn = document.getElementById('btn')
+        let pass = document.getElementById('pass')
+        let user = document.getElementById('user')
+
+        btn.addEventListener('click', function () {
+            let username = user.value;
+            let password = pass.value;
+
+            if (username.length < 3) {
+                alert("Username must be at least 3 characters long.");
+            }else if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+            }else {
+                alert("Login Successful!");
+            }
+        })
+    </script>
+</body>
+
+</html>
