@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="dob" type="date">
+    <button id="btn">Calculate</button>
+    <div id="dis"></div>
+    <script>
+        //         16. Age Calculator
+        // Problem Statement: Calculate age from a given date of birth.
+        // Constraints:
+        // • Input: Date
+        // • Output: Years
+
+        let btn = document.getElementById("btn")
+        let dob = document.getElementById("dob")
+        let dis = document.getElementById("dis")
+
+        btn.addEventListener("click", function () {
+
+            let birthDate = new Date(dob.value)
+            let today = new Date()
+
+            let age = today.getFullYear() - birthDate.getFullYear()
+
+            // Check if birthday has occurred this year
+            let monthDiff = today.getMonth() - birthDate.getMonth()
+
+            if(monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())){
+                age--;
+            }
+
+            dis.innerText = `Age : ${age} years`
+        })
+    </script>
+</body>
+
+</html>
