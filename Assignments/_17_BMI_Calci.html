@@ -8,12 +8,47 @@
 </head>
 
 <body>
+    <input type="text" id="h" placeholder="Enter your height in (cm)"><br>
+    <input type="text" id="w" placeholder="Enter your weight"><br>
+    <button id="btn">Calculate BMI</button>
+    <div id="dis"></div>
+
     <script>
         //         17. BMI Calculator
         // Problem Statement: Compute Body Mass Index based on height and weight inputs.
         // Constraints:
         // • Formula: BMI = weight / height?
         // • Show category
+
+        let btn = document.getElementById("btn")
+        let dis = document.getElementById("dis")
+
+        btn.addEventListener("click", function () {
+
+            let w = document.getElementById("w").value;
+            let h = document.getElementById("h").value;
+
+            let wi = parseFloat(w);
+            let hi = parseFloat(h) / 100; // cm to meters
+
+            if (isNaN(wi) || isNaN(hi) || wi <= 0 || hi <= 0) {
+                dis.innerText = "Please enter valid height and weight."
+                return;
+            }
+
+            let bmi = wi / (hi * hi);
+
+            if (bmi < 18.5) {
+                dis.innerText = `BMI is ${bmi.toFixed(2)} and category is Underweight`
+            } else if (bmi < 25) {
+                dis.innerText = `BMI is ${bmi.toFixed(2)} and category is Normal`
+            } else if (bmi < 30) {
+                dis.innerText = `BMI is ${bmi.toFixed(2)} and category is Overweight`
+            } else {
+                dis.innerText = `BMI is ${bmi.toFixed(2)} and category is Obese`
+            }
+
+        });
     </script>
 </body>
 
