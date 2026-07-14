@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="bill" placeholder="Enter Bill Amount">
+    <input type="text" id="per" placeholder="Enter Percentage for tip">
+    <button id="btn">Calculate Tip</button>
+    <div id="dis"></div>
+    <script>
+        //         18. Tip Calculator
+        // Problem Statement: Calculate tip amount based on bill value and percentage.
+        // Constraints:
+        // • Allow custom tip ?
+        // , Round output
+
+        let dis=document.getElementById("dis")
+        let btn=document.getElementById("btn")
+
+        btn.addEventListener("click",function(){
+            let bill=document.getElementById("bill").value
+            let per=document.getElementById("per").value
+
+            let b=parseFloat(bill)
+            let p=parseFloat(per)
+
+            let tip=(b * p / 100).toFixed(2)
+
+            dis.innerText=`The Tip Amount is ${tip}`
+        })
+
+    </script>
+</body>
+
+</html>
