@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <input type="text" placeholder="Enter Temperature" id="ip">
+    <input type="text" placeholder="Enter Temperature in Kelvin" id="ip">
     <button id="btn">Convert</button>
     <div id="dis"></div>
     <script>
@@ -18,18 +18,24 @@
         // Convert both directions
         // : Prevent invalid input
 
-        let dis=document.getElementById("dis")
-        let btn=document.getElementById("btn")
+        let dis = document.getElementById("dis")
+        let btn = document.getElementById("btn")
 
-        btn.addEventListener("click",function(){
-            let ip=document.getElementById("ip").value
+        btn.addEventListener("click", function () {
+            let ip = document.getElementById("ip").value
 
-            let final=parseFloat("ip")
+            let final = parseFloat(ip)
 
-            let 
+            if (isNaN(final)) {
+                dis.innerText = "Please enter a valid temperature.";
+            }
 
-            
-        })
+                let fahen = (final - 273.15) * (9 / 5) + 32
+
+                dis.innerText = `The Temperature in fahrenheit is ${fahen}`
+
+
+            })
     </script>
 </body>
 

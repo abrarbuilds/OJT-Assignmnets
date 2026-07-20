@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Enter Number" id="ip">
+    <div id="dis"></div>
+    <button id="btn">Guess</button>
+    <script>
+        // 20. Guessing Game
+        // Problem Statement: Generate a random number and allow the user to guess it with feedback.
+        // Constraints:
+        // • Range: 1-100
+        // Show hints (higher/ lower)
+
+        let dis = document.getElementById("dis")
+        let btn = document.getElementById("btn")
+
+        let no = Math.random().toFixed(2) * 100
+        let tried = 0
+        btn.addEventListener("click", function () {
+
+            let ip = document.getElementById("ip").value
+
+            let noFromUser = parseInt(ip)
+
+            tried++
+            if (noFromUser == no) {
+                dis.innerText = `You won the game`
+            } else if (tried == 3) {
+                dis.innerText = `You lost the game the number was ${no}`
+            } else if (noFromUser > no) {
+                dis.innerText = `Try lower number`
+            } else {
+                dis.innerText = `Try higher number`
+            }
+        })
+    </script>
+</body>
+
+</html>
