@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Have your task" id="ip">
+    <button id="add">Add</button>
+    <button id="delete">Delete</button>
+    <button id="done">Done</button>
+    <div id="dis"></divid>
+    <script>
+//         21. To-Do List
+// Problem Statement: Allow users to add, delete, and mark tasks as completed.
+// Constraints:
+// • Add/delete tasks
+// • Mark complete
+        let add=document.getElementById("add")
+        let dis=document.getElementById("dis")
+
+        add.addEventListener('click',function(){
+            let ip=document.getElementById("ip").value
+
+            dis.innerHTML+=`<h1>${ip}<h1>` 
+        })
+        
+    </script>
+</body>
+</html>
