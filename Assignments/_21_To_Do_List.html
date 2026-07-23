@@ -1,31 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <input type="text" placeholder="Have your task" id="ip">
+    <input type="text" placeholder="Enter your task" id="ip" />
     <button id="add">Add</button>
-    <button id="delete">Delete</button>
-    <button id="done">Done</button>
-    <div id="dis"></divid>
+    <ul id="dis"></ul>
     <script>
-//         21. To-Do List
-// Problem Statement: Allow users to add, delete, and mark tasks as completed.
-// Constraints:
-// • Add/delete tasks
-// • Mark complete
-        let add=document.getElementById("add")
-        let dis=document.getElementById("dis")
+        //         21. To-Do List
+        // Problem Statement: Allow users to add, delete, and mark tasks as completed.
+        // Constraints:
+        // • Add/delete tasks
+        // • Mark complete
+        const add = document.getElementById("add");
+        const ip = document.getElementById("ip");
+        const dis = document.getElementById("dis");
 
-        add.addEventListener('click',function(){
-            let ip=document.getElementById("ip").value
+        function addTask() {
+            const taskText = ip.value.trim();
 
-            dis.innerHTML+=`<h1>${ip}<h1>` 
-        })
-        
+            if (taskText === "") {
+                return;
+            }
+
+            const li = document.createElement("li");
+            li.textContent = taskText;
+
+            const complete = document.createElement("button");
+            complete.textContent = "Complete";
+            complete.addEventListener("click", function () {
+                li.classList.toggle("completed");
+            });
+
+            const del = document.createElement("button");
+            del.textContent = "Delete";
+            del.addEventListener("click", function () {
+                li.remove();
+            });
+
+            li.appendChild(complete);
+            li.appendChild(del);
+            dis.appendChild(li);
+
+            ip.value = "";
+            ip.focus();
+        }
+
+        add.addEventListener("click", addTask);
+
+        ip.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                addTask();
+            }
+        });
     </script>
 </body>
+
 </html>
